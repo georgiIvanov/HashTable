@@ -107,7 +107,6 @@ namespace HashImplementation
                             yield return key;
                         }
                     }
-                    
                 }
             }
         }
@@ -116,23 +115,16 @@ namespace HashImplementation
         {
             get
             {
-                List<KeyValuePair<K, V>> items = new List<KeyValuePair<K, V>>();
                 foreach (var node in array)
                 {
                     if (node != null)
                     {
                         foreach (var pair in node.Items)
                         {
-                            items.Add(pair);
+                            yield return pair;
                         }
                     }
-                    else
-                    {
-                        items.Add(null);
-                    }
                 }
-
-                return items;
             }
         }
 

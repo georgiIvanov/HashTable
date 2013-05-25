@@ -93,12 +93,9 @@ namespace HashImplementation
         {
             get
             {
-                if (items != null)
+                foreach (var pair in items)
                 {
-                    foreach (var pair in items)
-                    {
-                        yield return pair.Value;
-                    }
+                    yield return pair.Value;
                 }
             }
         }
@@ -121,12 +118,9 @@ namespace HashImplementation
         {
             get
             {
-                if (items != null)
+                foreach (var pair in items)
                 {
-                    foreach (var pair in items)
-                    {
-                        yield return pair;
-                    }
+                    yield return pair;
                 }
             }
         }

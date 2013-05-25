@@ -14,7 +14,7 @@ namespace HashImplementation
         HashTableArray<K, V> array;
 
         public HashTable()
-            :this(1000)
+            : this(1051)
         {
 
         }
@@ -95,10 +95,7 @@ namespace HashImplementation
         {
             get
             {
-                foreach (K key in array.Keys)
-                {
-                    yield return key;
-                }
+                return array.Keys;
             }
         }
 
@@ -106,10 +103,7 @@ namespace HashImplementation
         {
             get
             {
-                foreach (var value in array.Values)
-                {
-                    yield return value;
-                }
+                return array.Values;
             }
         }
 
@@ -133,11 +127,7 @@ namespace HashImplementation
 
             foreach (var node in array.Items)
             {
-                if (node == null)
-                {
-                    largerArray.Add(default(K), default(V));
-                }
-                else
+                if (node != null)
                 {
                     largerArray.Add(node.Key, node.Value);
                 }
